@@ -20,7 +20,7 @@ Usage
 server.coffee:
 ```coffee
 ...
-preflightEnabler = require('./se7ensky-restify-preflight')
+preflightEnabler = require 'se7ensky-restify-preflight'
 preflightEnabler server
 ...
 ```
