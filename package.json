@@ -1,7 +1,7 @@
 {
     "name": "se7ensky-restify-preflight",
     "description": "Drop-in preflight for Restify with support of Cookie authorization.",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "homepage" : "https://github.com/Se7enSky/se7ensky-restify-preflight",
     "engines": {
         "node": "*"

@@ -3,7 +3,7 @@ module.exports = (server) ->
 	server.use (req, res, next) ->
 		res.header 'Access-Control-Allow-Origin', req.headers.origin if req.headers.origin
 		res.header 'Access-Control-Allow-Credentials', 'true'
-		res.header 'Access-Control-Allow-Headers', 'X-Requested-With, Cookie, Set-Cookie, Accept, Access-Control-Allow-Credentials, Origin, Content-Type, Request-Id , X-Api-Version, X-Request-Id'
+		res.header 'Access-Control-Allow-Headers', 'X-Requested-With, Cookie, Set-Cookie, Accept, Access-Control-Allow-Credentials, Origin, Content-Type, Request-Id , X-Api-Version, X-Request-Id, Authorization'
 		res.header 'Access-Control-Expose-Headers', 'Set-Cookie'
 		next()
 
@@ -12,7 +12,7 @@ module.exports = (server) ->
 		if req.headers.origin and req.headers['access-control-request-method']
 			res.header 'Access-Control-Allow-Origin', req.headers.origin
 			res.header 'Access-Control-Allow-Credentials', 'true'
-			res.header 'Access-Control-Allow-Headers', 'X-Requested-With, Cookie, Set-Cookie, Accept, Access-Control-Allow-Credentials, Origin, Content-Type, Request-Id , X-Api-Version, X-Request-Id'
+			res.header 'Access-Control-Allow-Headers', 'X-Requested-With, Cookie, Set-Cookie, Accept, Access-Control-Allow-Credentials, Origin, Content-Type, Request-Id , X-Api-Version, X-Request-Id, Authorization'
 			res.header 'Access-Control-Expose-Headers', 'Set-Cookie'
 			res.header 'Allow', req.headers['access-control-request-method']
 			res.header 'Access-Control-Allow-Methods', req.headers['access-control-request-method']
