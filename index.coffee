@@ -1,6 +1,6 @@
-module.exports = (server,opts) ->
+module.exports = (server, opts) ->
 	headers = 'X-Requested-With, Cookie, Set-Cookie, Accept, Access-Control-Allow-Credentials, Origin, Content-Type, Request-Id , X-Api-Version, X-Request-Id, Authorization'
-	headers += ', ' + opts.headers if opts && opts.headers
+	headers += ', ' + opts.headers if opts?.headers
 
 	# CORS headers
 	server.use (req, res, next) ->
