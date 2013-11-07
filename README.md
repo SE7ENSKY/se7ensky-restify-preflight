@@ -23,21 +23,22 @@ server.coffee:
 preflightEnabler = require 'se7ensky-restify-preflight'
 preflightEnabler server
 ...
+# you can pass additional headers to preflight
+preflightEnabler server, headers: "X-Custom-Headers, X-Can-Be-There"
 ```
-
-ToDo
-----
-- make it more flexible?
-
-Contributing
-------------
-Feel free to post issues or pull requests at [github repo](https://github.com/Se7enSky/se7ensky-restify-preflight).
 
 Authors
 -------
 
   - [Se7enSky studio](http://github.com/Se7enSky) – [official website](http://www.se7ensky.com/)
   - [Ivan Kravchenko](http://github.com/krava)
+
+Contributing
+------------
+Feel free to post issues or pull requests at [github repo](https://github.com/Se7enSky/se7ensky-restify-preflight).
+
+### Contributors
+ - [Jordan Ayers](https://github.com/jordan-ayers)
 
 License
 -------
