@@ -1,7 +1,7 @@
 {
     "name": "se7ensky-restify-preflight",
     "description": "Drop-in preflight for Restify with support of Cookie authorization.",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "homepage" : "https://github.com/Se7enSky/se7ensky-restify-preflight",
     "engines": {
         "node": "*"
@@ -14,12 +14,6 @@
         "drop-in",
         "fix"
     ],
-
-    "dependencies": {
-        "restify": "*",
-        "bunyan": "*",
-        "mongoose": "*"
-    },
 
     "repository" : {
         "type" : "git",

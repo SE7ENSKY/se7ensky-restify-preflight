@@ -4,7 +4,8 @@ module.exports = (server, opts) ->
 
 	# CORS headers
 	server.use (req, res, next) ->
-		res.header 'Access-Control-Allow-Origin', req.headers.origin if req.headers.origin
+		if req.headers.origin
+			res.header 'Access-Control-Allow-Origin', req.headers.origin
 		res.header 'Access-Control-Allow-Credentials', 'true'
 		res.header 'Access-Control-Allow-Headers', headers
 		res.header 'Access-Control-Expose-Headers', 'Set-Cookie'
@@ -17,10 +18,14 @@ module.exports = (server, opts) ->
 			res.header 'Access-Control-Allow-Credentials', 'true'
 			res.header 'Access-Control-Allow-Headers', headers
 			res.header 'Access-Control-Expose-Headers', 'Set-Cookie'
-			res.header 'Allow', req.headers['access-control-request-method']
-			res.header 'Access-Control-Allow-Methods', req.headers['access-control-request-method']
+			requestMethod = req.headers['access-control-request-method']
+			res.header 'Allow', requestMethod
+			res.header 'Access-Control-Allow-Methods', requestMethod
 			if req.log
-				req.log.info { url:req.url, method:req.headers['access-control-request-method'] }, "Preflight"
+				req.log.info
+					url: req.url
+					method: req.headers['access-control-request-method']
+				, "Preflight"
 			res.send 204
 			next()
 		else
